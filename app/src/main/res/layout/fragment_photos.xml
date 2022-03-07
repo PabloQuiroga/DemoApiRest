@@ -5,7 +5,7 @@
     android:id="@+id/photosLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PhotosFragment">
+    tools:context=".ui.PhotosFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerPhotos"

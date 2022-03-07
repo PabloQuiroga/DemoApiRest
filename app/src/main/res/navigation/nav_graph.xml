@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/albumsFragment"
-        android:name="com.siar.demoapirest.AlbumsFragment"
+        android:name="com.siar.demoapirest.ui.AlbumsFragment"
         android:label="fragment_albums"
         tools:layout="@layout/fragment_albums" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/photosFragment"
-        android:name="com.siar.demoapirest.PhotosFragment"
+        android:name="com.siar.demoapirest.ui.PhotosFragment"
         android:label="fragment_photos"
         tools:layout="@layout/fragment_photos" />
 </navigation>

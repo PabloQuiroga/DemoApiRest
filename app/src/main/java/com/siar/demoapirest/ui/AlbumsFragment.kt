@@ -1,4 +1,4 @@
-package com.siar.demoapirest
+package com.siar.demoapirest.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
