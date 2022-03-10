@@ -8,7 +8,7 @@ import retrofit2.http.GET
 interface ApiInterface {
 
     @GET("albums")
-    suspend fun getAllAlbums(): Response<List<Album>>
+    suspend fun getAllAlbums(): List<Album>
 
     @GET("photos")
     suspend fun getAllPhotos(): Response<List<Photo>>

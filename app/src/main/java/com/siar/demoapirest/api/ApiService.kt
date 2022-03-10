@@ -10,7 +10,7 @@ class ApiService {
     private val api: ApiInterface by lazy {
         RetrofitClient.API_INTERFACE
     }
-    suspend fun fetchAlbums(): Response<List<Album>> {
+    suspend fun fetchAlbums(): List<Album> {
         return withContext(Dispatchers.IO) {
             return@withContext api.getAllAlbums()
         }
