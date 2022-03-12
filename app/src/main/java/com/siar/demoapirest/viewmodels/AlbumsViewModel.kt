@@ -19,6 +19,5 @@ class AlbumsViewModel: ViewModel(), CoroutineScope {
             val data = ApiService().fetchAlbums()
             albumModel.postValue(data)
         }
-
     }
 }

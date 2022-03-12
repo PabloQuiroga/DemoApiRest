@@ -1,18 +1,21 @@
-package com.siar.demoapirest.ui
+package com.siar.demoapirest.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.siar.demoapirest.databinding.FragmentAlbumsBinding
 import com.siar.demoapirest.model.Album
+import com.siar.demoapirest.ui.adapters.AlbumAdapter
 import com.siar.demoapirest.viewmodels.AlbumsViewModel
 
-class AlbumsFragment : Fragment() {
+class AlbumsFragment : Fragment(), AlbumAdapter.OnAlbumClickListener {
 
     private lateinit var binding: FragmentAlbumsBinding
     private val albumViewModel: AlbumsViewModel by viewModels()
@@ -26,7 +29,7 @@ class AlbumsFragment : Fragment() {
         albumViewModel.fetchData()
 
         binding.recyclerAlbums.layoutManager = LinearLayoutManager(context)
-        binding.recyclerAlbums.adapter = AlbumAdapter(emptyList())
+        binding.recyclerAlbums.adapter = AlbumAdapter(emptyList(), this)
 
         return binding.root
     }
@@ -46,5 +49,14 @@ class AlbumsFragment : Fragment() {
                 this.notifyDataSetChanged()
             }
         }
+    }
+
+    override fun onImageClick() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onItemClick(id: Int) {
+        val direction =  AlbumsFragmentDirections.actionAlbumsToPhotos(id)
+        view?.let { Navigation.findNavController(it).navigate(direction) }
     }
 }
