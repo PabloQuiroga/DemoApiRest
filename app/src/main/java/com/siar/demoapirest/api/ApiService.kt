@@ -15,9 +15,9 @@ class ApiService {
             return@withContext api.getAllAlbums()
         }
     }
-    suspend fun fetchPhotos(): Response<List<Photo>> {
+    suspend fun fetchPhotosByAlbumId(id: Int): List<Photo> {
         return withContext(Dispatchers.IO) {
-            return@withContext api.getAllPhotos()
+            return@withContext api.getPhotosByAlbumId(id)
         }
     }
 }
