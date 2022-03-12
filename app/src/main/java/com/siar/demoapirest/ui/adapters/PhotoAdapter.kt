@@ -4,16 +4,16 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.siar.demoapirest.databinding.ItemPhotoBinding
 import com.siar.demoapirest.model.Photo
+import com.squareup.picasso.Picasso
 
 class PhotoAdapter(val context: Context, var itemList: List<Photo>): RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>(){
 
     inner class PhotoViewHolder(private val binding: ItemPhotoBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(photo: Photo){
             binding.txtIdAlbum.text = photo.albumId.toString()
-            Glide.with(context).load(photo.thumbnailUrl).into(binding.imgPhoto)
+            Picasso.get().load(photo.thumbnailUrl).into(binding.imgPhoto)
             binding.txtTitlePhoto.text = photo.title
         }
     }
